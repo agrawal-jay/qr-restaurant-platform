@@ -11,22 +11,22 @@ We will start with a **modular monolith** for the backend, which will make it mu
     /qr-restaurant-platform
     │
     ├── /apps
-    │   ├── /customer-app      # Next.js mobile-first web app[cite: 1]
-    │   ├── /admin-cms         # React/Next.js dashboard for staff[cite: 1]
-    │   ├── /kitchen-kds       # React/Next.js Kitchen Display System[cite: 1]
-    │   └── /backend           # NestJS modular monolith[cite: 1]
+    │   ├── /customer-app      # Next.js mobile-first web app
+    │   ├── /admin-cms         # React/Next.js dashboard for staff
+    │   ├── /kitchen-kds       # React/Next.js Kitchen Display System
+    │   └── /backend           # NestJS modular monolith
     │
     ├── /packages
     │   ├── /shared-types      # Shared TypeScript interfaces 
     │   ├── /shared-ui         # Shared UI components (buttons, modals)
-    │   └── /validation        # Shared Zod schemas for forms and API payloads[cite: 1]
+    │   └── /validation        # Shared Zod schemas for forms and API payloads
     │
     ├── /infrastructure        # DevOps & Deployment configs
     │   ├── /terraform         # Infrastructure as Code for AWS provisioning
     │   └── /local-dev         # Docker-compose files for local development
     │
     └── .github
-        └── /workflows         # GitHub Actions for CI/CD pipelines[cite: 1]
+        └── /workflows         # GitHub Actions for CI/CD pipelines
 
 ---
 

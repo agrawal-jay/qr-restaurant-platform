@@ -5,7 +5,8 @@ const express=require('express')
 const cors=require('cors')
 const pool=require('./Config/db')
 const authRoutes=require('./Routes/auth.routes')
-
+const restaurantRouter=require('./Routes/restaurant.routes')
+const menuCategories=require('./Routes/menuCategories.routes')
 
 const app=express();
 
@@ -14,6 +15,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/auth", authRoutes);
+app.use("/api/restaurant", restaurantRouter);
+app.use("/api/menuCategories", menuCategories);
 
 const PORT=process.env.PORT ||5000;
 

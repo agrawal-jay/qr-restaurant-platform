@@ -7,6 +7,7 @@ const pool=require('./Config/db')
 const authRoutes=require('./Routes/auth.routes')
 const restaurantRouter=require('./Routes/restaurant.routes')
 const menuCategories=require('./Routes/menuCategories.routes')
+const menuItemsRouter=require('./Routes/menuItems.routes')
 
 const app=express();
 
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/auth", authRoutes);
 app.use("/api/restaurant", restaurantRouter);
 app.use("/api/menuCategories", menuCategories);
+app.use("/api/menuItems", menuItemsRouter);
 
 const PORT=process.env.PORT ||5000;
 

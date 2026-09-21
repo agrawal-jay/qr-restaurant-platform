@@ -79,6 +79,37 @@ const createOrder = async (req, res) => {
     });
 };
 
+const getOrder=async(req,res)=>{
+    const {id}=req.body;
+
+    const orders = await ordersModel.getOrder(id);
+    
+        if (!orders || orders.length === 0) {
+            return res.status(404).json({
+                message: "Order not found",
+                success: false
+            });
+        }
+
+          const orderItems = await ordersModel.getOrderItems(id);
+    
+        if (!orderItems || orders.length === 0) {
+            return res.status(404).json({
+                message: "Order items not found",
+                success: false
+            });
+        }
+
+
+        //pending logic tommorrow
+
+
+
+
+
+
+}
+
 
 module.exports = {
     createOrder

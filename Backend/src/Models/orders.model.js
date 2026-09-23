@@ -62,7 +62,7 @@ const createOrderItem = async (
 };
 
 const getOrder=async(orderId)=>{
-    const query='SELECT * from orders where id=$1 RETURNING *';
+    const query='SELECT * from orders where id=$1';
 
     const result=await pool.query(query,[orderId]);
     return result.rows[0];
@@ -71,7 +71,7 @@ const getOrder=async(orderId)=>{
 }
 
 const getOrderItems=async(orderId)=>{
-    const query='SELECT * from order_items where order_id=$1 RETURNING *';
+    const query='SELECT * from order_items where order_id=$1';
     const result=await pool.query(query,[orderId]);
     return result.rows;
 

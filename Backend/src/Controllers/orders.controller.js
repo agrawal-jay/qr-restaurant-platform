@@ -84,7 +84,7 @@ const getOrder = async (req, res) => {
 
     const orders = await ordersModel.getOrder(id);
 
-    if (!orders || orders.length === 0) {
+    if (!orders) {
         return res.status(404).json({
             message: "Order not found",
             success: false
@@ -93,7 +93,7 @@ const getOrder = async (req, res) => {
 
     const orderItems = await ordersModel.getOrderItems(id);
 
-    if (!orderItems || orders.length === 0) {
+    if (!orderItems) {
         return res.status(404).json({
             message: "Order items not found",
             success: false
@@ -101,11 +101,14 @@ const getOrder = async (req, res) => {
     }
     //pending logic tommorrow
 
+    orders.items=[];
+
     orderItems.forEach((item) => 
     {
-        const items = "items";
-        orders[items].push({
+        
+        orders.items.push({
             id: item.id,
+            menu_item_id: item.menu_item_id,
             quantity: item.quantity,
             price: item.price
 

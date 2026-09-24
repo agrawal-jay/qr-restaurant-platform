@@ -11,6 +11,7 @@ const menuItemsRouter=require('./Routes/menuItems.routes')
 const tableRouter=require('./Routes/tables.routes')
 const customerMenuRouter=require('./Routes/customerMenu.routes')
 const ordersModel=require('./Routes/orders.routes')
+const statusModel=require('./Routes/status.routes')
 
 const app=express();
 
@@ -25,6 +26,8 @@ app.use("/api/menuItems", menuItemsRouter);
 app.use("/api/tables", tableRouter);
 app.use("/api/menu-customer", customerMenuRouter);
 app.use("/api/orders",ordersModel)
+app.use("/api/orderstatus",statusModel)
+
 
 const PORT=process.env.PORT ||5000;
 

@@ -3,10 +3,11 @@ const statusModel= require("../Models/status.model")
 const updateStatus=async(req,res)=>{
 
     const {id} = req.params;
+    const {status}=req.body;
 
-    const status= await statusModel.updateStatus(id);
+    const updatedstatus= await statusModel.updateStatus(status,id);
 
-    if(!status){
+    if(!updatedstatus){
         return res.status(404).json({
             message:"Restaurant not found",
             success:false
@@ -15,7 +16,7 @@ const updateStatus=async(req,res)=>{
 
     return res.status(200).json({
         sucess:true,
-        data: status
+        data: updatedstatus
     })
 
 }

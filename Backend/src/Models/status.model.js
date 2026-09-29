@@ -1,8 +1,8 @@
 const pool=require('../Config/db')
 
-const updateStatus=async(id)=>{
-    const query='UPDATE orders SET status=$1 RETURNING status';
-       const result=await pool.query(query,[id]);
+const updateStatus=async(status,id)=>{
+    const query='UPDATE orders SET status=$1 where id=$2 RETURNING status';
+       const result=await pool.query(query,[status,id]);
     return result.rows[0];
 
 }
